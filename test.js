@@ -9,5 +9,14 @@ browserify()
   .bundle(function (err, code) {
     assert.ifError(err);
     run(code);
-    console.info('Normal bundle');
+    assert(code.toString().indexOf('__browserify_shim') > -1);
+    console.info('Normal bundle success');    
+  });
+
+browserify()
+  .require('shimmed')
+  .bundle(function (err, code) {
+    assert.ifError(err);
+    run(code);
+    assert(code.toString().indexOf('__browserify_shim') > -1);
   });
