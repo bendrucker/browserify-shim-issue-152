@@ -1,0 +1,40 @@
+{
+  "name": "browserify-shim-issue-152",
+  "version": "1.0.0",
+  "description": "https://github.com/thlorenz/browserify-shim/issues/152",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bendrucker/browserify-shim-issue-152.git"
+  },
+  "author": "Ben Drucker <bvdrucker@gmail.com> (http://www.bendrucker.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bendrucker/browserify-shim-issue-152/issues"
+  },
+  "homepage": "https://github.com/bendrucker/browserify-shim-issue-152",
+  "dependencies": {
+    "browserify": "~9.0.8",
+    "browserify-shim": "~3.8.3",
+    "dot-prop": "~1.0.1"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browser": {
+    "shimmed": "./shimmed/shimmed.js"
+  },
+  "browserify-shim": {
+    "shimmed": {
+      "depends": [
+          "dot-prop:dotProp",
+          "assert"
+      ]
+    }
+  }
+}
